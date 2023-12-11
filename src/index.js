@@ -36,12 +36,13 @@ function formatDate(date) {
   if (hours > 12) {
     hours -= 12;
   }
+  let formattedHours = hours < 10 ? `0${hours}` : hours;
 
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
 
-  return `${day} ${hours}:${minutes} ${period}`;
+  return `${day} ${formattedHours}:${minutes} ${period}`;
 }
 
 function searchCity(city) {
@@ -61,3 +62,5 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Paris");
+
+
